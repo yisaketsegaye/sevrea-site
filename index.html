@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SevRae</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0f0f0f;
+            color: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            padding-top: 120px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            letter-spacing: -1px;
+            font-weight: 700;
+            color: #fafafa;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            font-weight: 300;
+            opacity: 0.75;
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 1px;
+            background: #333;
+            margin: 40px auto;
+        }
+
+        .coming {
+            font-size: 1rem;
+            opacity: 0.5;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        input[type="email"] {
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #151515;
+            color: #fafafa;
+            width: 260px;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 24px;
+            border-radius: 6px;
+            border: none;
+            margin-left: 10px;
+            background: #2e7d32;  /* dark green accent */
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        .footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 40px 0;
+            opacity: 0.4;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.4rem; }
+            .tagline { font-size: 1.1rem; }
+            input[type="email"] {
+                width: 180px;
+                margin-bottom: 10px;
+            }
+            button {
+                display: block;
+                width: 100%;
+                margin-left: 0;
+                margin-top: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>SevRae</h1>
+        <p class="tagline">Something intelligent is coming.</p>
+
+        <div class="divider"></div>
+
+        <p class="coming">Stealth Mode</p>
+
+        <!-- OPTIONAL EMAIL SIGNUP (you can remove this entire block) -->
+        <form action="#" method="POST" onsubmit="event.preventDefault(); showMessage();">
+            <input type="email" id="email" placeholder="Stay in the loop" required>
+            <button type="submit">Notify Me</button>
+        </form>
+
+        <p id="thanks" style="display:none; margin-top:20px; opacity:0.7;">
+            Thank you — you’ll hear from us soon.
+        </p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("thanks").style.display = "block";
+        }
+    </script>
+
+    <div class="footer">
+        © <span id="year"></span> SevRae. All rights reserved.
+    </div>
+
+    <script>
+        document.getElementById("year").innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>
